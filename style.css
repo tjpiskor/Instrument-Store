@@ -1,0 +1,42 @@
+.box{
+  background-color: white;
+  border: solid;
+  height:330px;
+  width:200px;
+  margin: 10px 10px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 16px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+ background-image: url("https://i.stack.imgur.com/jGlzr.png");
+}
+
+#rightaligncart{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.red:hover{
+  background-color: red;
+  border: 5px red solid;
+  color: white;
+}
+
+.blue:hover{
+  background-color: blue;
+  border: 5px blue solid;
+  color: white;
+}
+
+.green:hover{
+  background-color: green;
+  border: 5px green solid;
+  color: white;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Buy Your Instruments V2</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="body">
+  <center>
+    
+  <h1>Tyler's Whacky Instrument Store</h1>
+  <h3>Best Prices on this side of the Mississippi!</h3>
+     
+  <div>
+    <div class="flex-container">
+    <div class="box" v-for="(data, index) in instruments" v-bind:class="[data.color]">
+      <div>
+        <img height="200" width="200" v-bind:src=data.img>
+        {{data.name}}<br>Type: {{data.type}}<br>Price: ${{data.price}}<br>Brand: {{data.brand}}<br>
+        <br><button v-on:click="storeAdd">Add to Cart</button>
+      </div>
+      <div v-bind:class="[{hide:!data.show}]"></div>
+   </div>
+    <p>{{empty}}</p>
+    <p id="rightaligncart">Cart: {{add}}
+      <br>
+      <button v-on:click="setZero">Empty Cart</button>
+    </p>
+    </div>
+  <div v-if="showNew" v-on:click="showNew=false">
+    <div class="popUp">
+      <div v-if="newItem.image"><img v-bind:src="newItem.image" /></div>
+      <div>{{newItem.name}}</div>
+      <div>{{newItem.type}}</div>
+      <div>{{newItem.brand}}</div>
+    </div>
+  </div>
+  <div>
+    
+    <h3> Add a new Instrument </h3>
+    
+    <input type="text" v-model="instrumentName" placeholder="Name" />
+    <input type="number" step="100" v-model="priceInput" placeholder="Price" />
+    <input type="text" v-model="typeInput" placeholder="Type of Instrument" />
+    
+    <input type="radio" id="one" value="Fender" v-model="brandInput">
+    <label for="one">Fender</label>
+    <input type="radio" id="two" value="Yamaha" v-model="brandInput">
+    <label for="two">Yamaha</label>
+    <input type="radio" id="three" value="Maton" v-model="brandInput">
+    <label for="three">Maton</label>
+    
+    <button v-on:click="newInstrument">Submit</button>
+    </>
+    </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
